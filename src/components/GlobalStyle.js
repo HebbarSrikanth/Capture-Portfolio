@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
 
 body{
     background:#124;
+    color:#fff;
     font-family:'Ubuntu','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
@@ -40,6 +41,7 @@ h3{
 }
 h4{
     font-weight:bold;
+    font-size:2rem;
 }
 span{
     font-weight:bold;
