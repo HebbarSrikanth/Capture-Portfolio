@@ -1,8 +1,9 @@
 import React from "react";
+import AboutUs from "./pages/AboutUs";
 const App = () => {
     return (
         <div>
-            <h3>Capture Portfolio </h3>
+            <AboutUs />
         </div>
     );
 };
