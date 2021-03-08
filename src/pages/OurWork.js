@@ -4,10 +4,13 @@ import Goodtime from "../img/goodtimes-small.png";
 import Racer from "../img/theracer-small.png";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+//For Animation
+import { motion } from "framer-motion";
+import { animation } from "../animation";
 
 const OurWork = () => {
     return (
-        <Work>
+        <Work variants={animation} initial="hidden" animate="show" exit="exit">
             <Movie>
                 <h1>Good Athlete</h1>
                 <div className="line"></div>
@@ -33,7 +36,7 @@ const OurWork = () => {
     );
 };
 
-const Work = styled.div`
+const Work = styled(motion.div)`
     min-height: 100vh;
     padding: 2rem 5rem;
     overflow: hidden;

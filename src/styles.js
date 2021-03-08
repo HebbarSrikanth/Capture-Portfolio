@@ -5,7 +5,7 @@ export const About = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 5rem 10rem;
+    padding: 1rem 10rem;
 `;
 
 export const Description = styled.div`

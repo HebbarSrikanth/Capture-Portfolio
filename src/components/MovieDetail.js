@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { MovieState } from "../MovieDetails";
 import styled from "styled-components";
+//For Animation
+import { motion } from "framer-motion";
+import { animation } from "../animation";
+import { useHistory } from "react-router";
 
-const MovieDetails = ({ history }) => {
+const MovieDetails = () => {
+    const history = useHistory();
     const url = history.location.pathname;
     const [movies] = useState(() => {
         return MovieState();
@@ -15,27 +20,27 @@ const MovieDetails = ({ history }) => {
         //eslint-disable-next-line
     }, [url]);
 
+    if (!currentMovie) return <div></div>;
+
     return (
-        currentMovie && (
-            <StyledMovie>
-                <h1>{currentMovie.title}</h1>
-                <img src={currentMovie.mainImg} alt={currentMovie.title} />
-                <Award>
-                    {currentMovie.awards.map((award) => (
-                        <div className="movie">
-                            <h3>{award.title}</h3>
-                            <div className="line"></div>
-                            <p>{award.description}</p>
-                        </div>
-                    ))}
-                </Award>
-                <img src={currentMovie.secondaryImg} alt={currentMovie.secondaryImg} />
-            </StyledMovie>
-        )
+        <StyledMovie variants={animation} initial="hidden" animate="show" exit="exit">
+            <h1>{currentMovie.title}</h1>
+            <img src={currentMovie.mainImg} alt={currentMovie.title} />
+            <Award>
+                {currentMovie.awards.map((award) => (
+                    <div className="movie" key={award.title}>
+                        <h3>{award.title}</h3>
+                        <div className="line"></div>
+                        <p>{award.description}</p>
+                    </div>
+                ))}
+            </Award>
+            <img src={currentMovie.secondaryImg} alt={currentMovie.secondaryImg} />
+        </StyledMovie>
     );
 };
 
-const StyledMovie = styled.div`
+const StyledMovie = styled(motion.div)`
     overflow: hidden;
     h1 {
         text-align: center;
