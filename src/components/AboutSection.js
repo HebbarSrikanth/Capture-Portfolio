@@ -2,6 +2,9 @@ import React from "react";
 import imagePath from "../img/home1.png";
 //Import Styled Components
 import { Hide, Image, About, Description } from "../styles";
+import { motion } from "framer-motion";
+import { titleAnimation, fade, photoAnim } from "../animation";
+import Wave from "./Wave";
 
 const AboutSection = () => {
     return (
@@ -9,26 +12,27 @@ const AboutSection = () => {
             <Description>
                 <div className="title">
                     <Hide>
-                        <h2>We work to make</h2>
+                        <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>
+                        <motion.h2 variants={titleAnimation}>
                             your <span>Dreams</span> come
-                        </h2>
+                        </motion.h2>
                     </Hide>
                     <Hide>
-                        <h2>true.</h2>
+                        <motion.h2 variants={titleAnimation}>true.</motion.h2>
                     </Hide>
                 </div>
-                <p>
-                    Contact us for any photography or videograpghy ideas that you have.We have professionals with
-                    amazing skills to help you achieve it.
-                </p>
-                <button>Contact us</button>
+                <motion.p variants={fade}>
+                    Contact us for any photography or videograpghy ideas that you have.We have
+                    professionals with amazing skills to help you achieve it.
+                </motion.p>
+                <motion.button variants={fade}>Contact us</motion.button>
             </Description>
             <Image>
-                <img src={imagePath} alt="Guy with a camera" />
+                <motion.img variants={photoAnim} src={imagePath} alt="Guy with a camera" />
             </Image>
+            <Wave />
         </About>
     );
 };

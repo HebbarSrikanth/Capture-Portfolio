@@ -9,16 +9,15 @@ import { useHistory } from "react-router";
 const MovieDetails = () => {
     const history = useHistory();
     const url = history.location.pathname;
-    const [movies] = useState(() => {
-        return MovieState();
-    });
-    const [currentMovie, setCurrentMovie] = useState(null);
+    const [movies, setMovies] = useState(MovieState);
+    const [currentMovie, setCurrentMovie] = useState("");
 
     useEffect(() => {
-        const movie = movies.find((m) => m.url === url);
-        setCurrentMovie(movie);
+        const movie = movies.filter((m) => m.url === url);
+        setCurrentMovie(movie[0]);
+        console.log(setMovies);
         //eslint-disable-next-line
-    }, [url]);
+    }, [movies, url]);
 
     if (!currentMovie) return <div></div>;
 
