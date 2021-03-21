@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
 body{
     background:#124;
     color:#fff;
-    font-family:'Ubuntu','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family:'Ubuntu','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x:hidden;
 }
 
 button{

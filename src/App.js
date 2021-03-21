@@ -7,6 +7,7 @@ import OurWork from "./pages/OurWork";
 import MovieDetail from "./components/MovieDetail";
 import { AnimatePresence } from "framer-motion";
 import Contact from "./components/Contact";
+
 const App = () => {
     const location = useLocation();
     return (

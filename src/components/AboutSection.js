@@ -6,37 +6,41 @@ import { motion } from "framer-motion";
 import { titleAnimation, fade, photoAnim } from "../animation";
 import Wave from "./Wave";
 import { Link } from "react-router-dom";
+import ScrollTop from "./ScrollTop";
 
 const AboutSection = () => {
     return (
-        <About>
-            <Description>
-                <div className="title">
-                    <Hide>
-                        <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
-                    </Hide>
-                    <Hide>
-                        <motion.h2 variants={titleAnimation}>
-                            your <span>Dreams</span> come
-                        </motion.h2>
-                    </Hide>
-                    <Hide>
-                        <motion.h2 variants={titleAnimation}>true.</motion.h2>
-                    </Hide>
-                </div>
-                <motion.p variants={fade}>
-                    Contact us for any photography or videograpghy ideas that you have.We have
-                    professionals with amazing skills to help you achieve it.
-                </motion.p>
-                <Link to="/contact">
-                    <motion.button variants={fade}>Contact us</motion.button>
-                </Link>
-            </Description>
-            <Image>
-                <motion.img variants={photoAnim} src={imagePath} alt="Guy with a camera" />
-            </Image>
-            <Wave />
-        </About>
+        <>
+            <ScrollTop />
+            <About>
+                <Description>
+                    <div className="title">
+                        <Hide>
+                            <motion.h2 variants={titleAnimation}>We work to make</motion.h2>
+                        </Hide>
+                        <Hide>
+                            <motion.h2 variants={titleAnimation}>
+                                your <span>Dreams</span> come
+                            </motion.h2>
+                        </Hide>
+                        <Hide>
+                            <motion.h2 variants={titleAnimation}>true.</motion.h2>
+                        </Hide>
+                    </div>
+                    <motion.p variants={fade}>
+                        Contact us for any photography or videograpghy ideas that you have.We have
+                        professionals with amazing skills to help you achieve it.
+                    </motion.p>
+                    <Link to="/contact">
+                        <motion.button variants={fade}>Contact us</motion.button>
+                    </Link>
+                </Description>
+                <Image>
+                    <motion.img variants={photoAnim} src={imagePath} alt="Guy with a camera" />
+                </Image>
+                <Wave />
+            </About>
+        </>
     );
 };
 
