@@ -6,6 +6,7 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import OurWork from "./pages/OurWork";
 import MovieDetail from "./components/MovieDetail";
 import { AnimatePresence } from "framer-motion";
+import Contact from "./components/Contact";
 const App = () => {
     const location = useLocation();
     return (
@@ -14,9 +15,18 @@ const App = () => {
             <Nav />
             <AnimatePresence exitBeforeEnter>
                 <Switch location={location} key={location.pathname}>
-                    <Route path="/" exact component={AboutUs} />
-                    <Route path="/work" exact component={OurWork} />
-                    <Route path="/work/:id" component={MovieDetail} />
+                    <Route path="/" exact>
+                        <AboutUs />
+                    </Route>
+                    <Route path="/work" exact>
+                        <OurWork />
+                    </Route>
+                    <Route path="/work/:id">
+                        <MovieDetail />
+                    </Route>
+                    <Route path="/contact">
+                        <Contact />
+                    </Route>
                 </Switch>
             </AnimatePresence>
         </div>
