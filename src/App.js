@@ -15,6 +15,7 @@ const App = () => {
             <GlobalStyle />
             <Nav />
             <AnimatePresence exitBeforeEnter>
+                {console.log(location.pathname)}
                 <Switch location={location} key={location.pathname}>
                     <Route path="/" exact>
                         <AboutUs />
